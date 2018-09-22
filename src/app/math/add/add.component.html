@@ -1,0 +1,23 @@
+<form [formGroup]="addForm" >
+<div align="center"  ng-app="myApp" ng-controller="myController">
+    <br/>  <br/>
+  <label>Max Range  &nbsp;&nbsp;</label>
+  <select formControlName="max"   (ngModelChange)="onChange($event)">
+    <option *ngFor="let max of numberMxRange" [value]="max" >{{max}}</option>
+  </select>  &nbsp;&nbsp;&nbsp;
+  
+  <br/>  <br/>
+  &nbsp;&nbsp; &nbsp;&nbsp;
+  {{disp_num1}}
+<br/><br/>
+<label>+ &nbsp;&nbsp;</label>
+{{disp_num2}} 
+<br/>
+_______________________________
+<br/> <br/> &nbsp;&nbsp;&nbsp;&nbsp;
+ <input formControlName="sum"   [(ngModel)] ="sum" id ="sum"  style="text-align:center;"  />
+ <br/> <br/>
+<input type="submit" value="Add"  (click)="addNumber(addForm)" />
+
+</div>
+</form>
